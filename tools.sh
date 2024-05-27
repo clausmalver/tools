@@ -21,12 +21,13 @@ lines=(
     "ffuf - FUZZ websites"
     "nmap - network scanner"
     "subfinder - enumerate subdomains"
+    "httpx - nextgen http client"
 )
 
 # Print header
-echo ===============================
-echo = Tools available on this box =
-echo ===============================
+echo =================================
+echo =! Tools available on this box !=
+echo =================================
 
 # Print lines with colored first names
 for i in "${!lines[@]}"; do
