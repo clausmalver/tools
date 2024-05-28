@@ -24,6 +24,9 @@ cd crtsh-list/
 # Install the necessary Python packages
 sudo apt-get install -y python3-bs4 python3-colorama python3-requests
 
+# Add the shebang line to the top of crtsh-list.py
+sed -i '1i#!/usr/bin/env python3' crtsh-list.py
+
 # Make the crtsh-list.py script executable
 sudo chmod +x crtsh-list.py
 
@@ -45,7 +48,19 @@ sudo apt-get install -y python3-tqdm
 sudo chmod +x whatsmyname.py
 
 # Move the whatsmyname.py script to /usr/local/bin for easy access
-sudo mv whatsmyname.py /usr/local/bin
+sudo mv ~/tools/WhatsMyName-Python/* /usr/local/bin
+
+# Move the tools.sh script to /usr/local/bin for easy access
+cd ~/tools/
+
+# Make the tools.sh script executable
+sudo chmod +x tools.sh
+
+# Move the tools.sh script to /usr/local/bin for easy access
+sudo mv ~/tools/tools.sh /usr/local/bin
+
+# Add the alias for tools to ~/.bashrc
+echo 'alias tools="tools.sh"' >> ~/.bashrc
 
 # Add the alias for social to ~/.bashrc
 echo 'alias social="whatsmyname.py -u \$1"' >> ~/.bashrc
