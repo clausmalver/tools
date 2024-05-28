@@ -50,4 +50,5 @@ for i in "${!lines[@]}"; do
     rest=$(echo "$line" | cut -d' ' -f2-)
     echo -e "${color}${first_name}${NC} --${rest}"
     echo -e "$usage"
+    echo # Add a blank line
 done
