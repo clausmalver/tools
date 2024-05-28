@@ -103,6 +103,9 @@ go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 # Update PATH in ~/.bashrc
 echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
 
+# Add the alias for tools to ~/.bashrc
+alias httpx='$HOME/go/bin/httpx'
+
 # Source the ~/.bashrc to make the aliases and PATH update available immediately
 source ~/.bashrc
 
