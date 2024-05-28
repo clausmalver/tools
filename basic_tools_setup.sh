@@ -79,11 +79,11 @@ echo 'alias social="whatsmyname.py -u \$1"' >> ~/.bashrc
 sudo apt-get install -y dnstwist
 
 # # Download and extract SecLists
-# wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip
-# sudo mkdir -p /usr/share/wordlists/SecLists/
-# sudo unzip SecList.zip -d /usr/share/wordlists/
-# sudo mv /usr/share/wordlists/SecLists-master/* /usr/share/wordlists/SecLists/
-# sudo rm -rf /usr/share/wordlists/SecLists-master SecList.zip
+wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip
+sudo mkdir -p /usr/share/wordlists/SecLists/
+sudo unzip SecList.zip -d /usr/share/wordlists/
+sudo mv /usr/share/wordlists/SecLists-master/* /usr/share/wordlists/SecLists/
+sudo rm -rf /usr/share/wordlists/SecLists-master SecList.zip
 
 # Install ffuf
 sudo apt-get install -y ffuf
@@ -106,10 +106,11 @@ echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
 # Add the alias for tools to ~/.bashrc
 echo 'alias httpx='$HOME/go/bin/httpx'' >> ~/.bashrc
 
-# Source the ~/.bashrc to make the aliases and PATH update available immediately
-source ~/.bashrc
-
 # Clean up by removing the cloned repositories
 rm -rf ~/tools/crtsh-list/
 rm -rf ~/tools/WhatsMyName-Python/
 
+# Source the ~/.bashrc to make the aliases and PATH update available immediately
+source ~/.bashrc
+
+cd
