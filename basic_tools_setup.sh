@@ -72,6 +72,9 @@ sudo apt-get install -y golang
 # Install subfinder
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 
+# Install httpx
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+
 # Update PATH in ~/.bashrc
 echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
 
