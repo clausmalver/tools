@@ -33,8 +33,8 @@ sudo chmod +x crtsh-list.py
 # Move the crtsh-list.py script to /usr/local/bin for easy access
 sudo mv crtsh-list.py /usr/local/bin
 
-# Add the alias for crtsh to ~/.bashrc
-echo 'alias crtsh="crtsh-list.py -d \$1"' >> ~/.bashrc
+# Add the function for crtsh to ~/.bashrc
+echo 'crtsh() { python3 /usr/local/bin/crtsh-list.py -d "$1"; }' >> ~/.bashrc
 
 # Clone the WhatsMyName-Python repository
 cd ~/tools/
