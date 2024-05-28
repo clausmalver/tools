@@ -11,7 +11,7 @@ echo "-w /var/log/auth.log -p wa -k authlog" | sudo tee /etc/audit/rules.d/audit
 sudo systemctl restart auditd
 
 # Create the show_ssh_logins.sh script
-cat %3C< 'EOF' | sudo tee /usr/local/bin/show_ssh_logins.sh
+cat << 'EOF' | sudo tee /usr/local/bin/show_ssh_logins.sh
 #!/bin/bash
 echo "Last 10 SSH login attempts (Accepted and Denied):"
 grep "sshd" /var/log/auth.log | grep -E "Accepted|Failed" | tail -n 10 | awk '
@@ -31,6 +31,6 @@ EOF
 sudo chmod +x /usr/local/bin/show_ssh_logins.sh
 
 # Add the script to the user's profile to run at login
-echo "/usr/local/bin/show_ssh_logins.sh" %3E> ~/.bashrc
+echo "/usr/local/bin/show_ssh_logins.sh" >> ~/.bashrc
 
 echo "Setup complete. The last 10 SSH login attempts will be displayed upon login."
