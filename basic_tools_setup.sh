@@ -7,6 +7,9 @@ sudo apt-get update
 sudo snap stop cups
 sudo snap disable cups
 
+# Install unzip
+sudo apt install unzip
+
 # Install python3-pip
 sudo apt-get install -y python3-pip
 
