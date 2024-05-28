@@ -31,7 +31,7 @@ sed -i '1i#!/usr/bin/env python3' crtsh-list.py
 sudo chmod +x crtsh-list.py
 
 # Move the crtsh-list.py script to /usr/local/bin for easy access
-sudo mv crtsh-list.py /usr/local/bin
+sudo mv crtsh-list.py /usr/local/bin/crtsh-list/
 
 # Add the function for crtsh to ~/.bashrc
 echo 'crtsh() { python3 /usr/local/bin/crtsh-list.py -d "$1"; }' >> ~/.bashrc
@@ -48,7 +48,7 @@ sudo apt-get install -y python3-tqdm
 sudo chmod +x whatsmyname.py
 
 # Move the whatsmyname.py script to /usr/local/bin for easy access
-sudo mv ~/tools/WhatsMyName-Python/* /usr/local/bin
+sudo mv ~/tools/WhatsMyName-Python/* /usr/local/bin/WhatsMyName-Python/
 
 # Move the tools.sh script to /usr/local/bin for easy access
 cd ~/tools/
@@ -59,6 +59,16 @@ sudo chmod +x tools.sh
 # Move the tools.sh script to /usr/local/bin for easy access
 sudo mv ~/tools/tools.sh /usr/local/bin
 
+# Clone the holehe repository
+git clone https://github.com/megadose/holehe.git
+cd holehe/
+
+# Install holehe using setup.py
+sudo python3 setup.py install
+
+# Move the holehe script to /usr/local/bin for easy access
+sudo mv ~/tools/holehe/* /usr/local/bin/holehe/
+
 # Add the alias for tools to ~/.bashrc
 echo 'alias tools="tools.sh"' >> ~/.bashrc
 
@@ -68,12 +78,12 @@ echo 'alias social="whatsmyname.py -u \$1"' >> ~/.bashrc
 # Install dnstwist
 sudo apt-get install -y dnstwist
 
-# Download and extract SecLists
-wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip
-sudo mkdir -p /usr/share/wordlists/SecLists/
-sudo unzip SecList.zip -d /usr/share/wordlists/
-sudo mv /usr/share/wordlists/SecLists-master/* /usr/share/wordlists/SecLists/
-sudo rm -rf /usr/share/wordlists/SecLists-master SecList.zip
+# # Download and extract SecLists
+# wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip
+# sudo mkdir -p /usr/share/wordlists/SecLists/
+# sudo unzip SecList.zip -d /usr/share/wordlists/
+# sudo mv /usr/share/wordlists/SecLists-master/* /usr/share/wordlists/SecLists/
+# sudo rm -rf /usr/share/wordlists/SecLists-master SecList.zip
 
 # Install ffuf
 sudo apt-get install -y ffuf
