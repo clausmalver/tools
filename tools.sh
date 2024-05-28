@@ -14,26 +14,40 @@ colors=($RED $GREEN $YELLOW $BLUE $MAGENTA $CYAN)
 
 # Input lines
 lines=(
-    "dnstwist - phishing domain scanner"
-    "holehe - Holehe OSINT - Email to Registered Accounts"
-    "crtsh - Check certificates of a domain"
-    "whatsmyname (cmd social) - Check a username on different social media"
-    "ffuf - FUZZ websites"
-    "nmap - network scanner"
-    "subfinder - enumerate subdomains"
-    "httpx - nextgen http client"
+    "dnstwist -- phishing domain scanner"
+    "holehe -- Holehe OSINT - Email to Registered Accounts"
+    "crtsh -- Check certificates of a domain"
+    "whatsmyname -- Check a username on different social media"
+    "ffuf -- FUZZ websites"
+    "nmap -- network scanner"
+    "subfinder -- enumerate subdomains"
+    "httpx -- nextgen http client"
+)
+
+# Usage instructions
+usages=(
+    "USE: dnstwist [Insert Domain]"
+    "USE: holehe user@domain.tld"
+    "USE: crtsh [Insert Domain]"
+    "USE: whatsmyname [Insert Username]"
+    "USE: ffuf [Insert URL]"
+    "USE: nmap [Insert IP/Domain]"
+    "USE: subfinder -d [Insert Domain]"
+    "USE: httpx [Insert URL] -title -status-code"
 )
 
 # Print header
-echo =================================
-echo =! Tools available on this box !=
-echo =================================
+echo "================================="
+echo "=! Tools available on this box !="
+echo "================================="
 
 # Print lines with colored first names
 for i in "${!lines[@]}"; do
     line="${lines[$i]}"
+    usage="${usages[$i]}"
     color="${colors[$((i % ${#colors[@]}))]}"
     first_name=$(echo "$line" | cut -d' ' -f1)
     rest=$(echo "$line" | cut -d' ' -f2-)
-    echo -e "${color}${first_name}${NC} -${rest}"
+    echo -e "${color}${first_name}${NC} --${rest}"
+    echo -e "$usage"
 done
