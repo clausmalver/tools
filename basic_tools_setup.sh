@@ -31,7 +31,7 @@ sed -i '1i#!/usr/bin/env python3' crtsh-list.py
 sudo chmod +x crtsh-list.py
 
 # Move the crtsh-list.py script to /usr/local/bin for easy access
-sudo mv crtsh-list.py /usr/local/bin/crtsh-list/
+sudo mv crtsh-list.py /usr/local/bin/
 
 # Add the function for crtsh to ~/.bashrc
 echo 'crtsh() { python3 /usr/local/bin/crtsh-list.py -d "$1"; }' >> ~/.bashrc
@@ -48,7 +48,7 @@ sudo apt-get install -y python3-tqdm
 sudo chmod +x whatsmyname.py
 
 # Move the whatsmyname.py script to /usr/local/bin for easy access
-sudo mv ~/tools/WhatsMyName-Python/* /usr/local/bin/WhatsMyName-Python/
+sudo mv ~/tools/WhatsMyName-Python/* /usr/local/bin/
 
 # Move the tools.sh script to /usr/local/bin for easy access
 cd ~/tools/
@@ -67,7 +67,7 @@ cd holehe/
 sudo python3 setup.py install
 
 # Move the holehe script to /usr/local/bin for easy access
-sudo mv ~/tools/holehe/* /usr/local/bin/holehe/
+sudo mv ~/tools/holehe/* /usr/local/bin/
 
 # Add the alias for tools to ~/.bashrc
 echo 'alias tools="tools.sh"' >> ~/.bashrc
