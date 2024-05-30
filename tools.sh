@@ -22,6 +22,7 @@ lines=(
     "nmap -- network scanner"
     "subfinder -- enumerate subdomains"
     "httpx -- nextgen http client"
+    "notify -- streamline and publish output of tools to multiple locations"
 )
 
 # Usage instructions
@@ -29,11 +30,12 @@ usages=(
     "USE: dnstwist [Insert Domain]"
     "USE: holehe user@domain.tld"
     "USE: crtsh [Insert Domain]"
-    "USE: whatsmyname [Insert Username]"
+    "USE: social [Insert Username]"
     "USE: ffuf [Insert URL]"
     "USE: nmap [Insert IP/Domain]"
     "USE: subfinder -d [Insert Domain]"
-    "USE: httpx [Insert URL] -title -status-code"
+    "USE: httpx [Insert URL] -sc -title -fr"
+    "USE: notify -bulk"
 )
 
 # Print header
